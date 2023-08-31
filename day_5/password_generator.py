@@ -1,4 +1,4 @@
-from random import choice, randint
+from random import choice, shuffle
 
 minusculas = [chr(i) for i in range(ord('a'), ord('z')+1)] 
 maiusculas = [chr(i) for i in range(ord('A'), ord('Z')+1)]
@@ -7,17 +7,40 @@ simbolos = ["!", "@", "#", "$", "&", "*"]
 escolhas = []
 senha = ""
 
-quantidade = int(input("Quantos digitos deseja na sua senha?\n-> "))
-quer_simbolo = input("Deseja simbolos? [s / n]\n-> ")
+total = int(input("Quantos digitos deseja em sua senha?\n"))
+qtt_num = int(input("Quantos números deseja?\n"))
+qtt_simb = int(input("Quantos simbolos?\n"))
 
-if quer_simbolo.lower() == "s":
-    escolhas = [minusculas,maiusculas,simbolos,numeros]
-else:
-    escolhas = [minusculas,maiusculas,numeros]
+if qtt_num > 0:
+    for i in range(qtt_num):
+        num = choice(numeros)
+        escolhas.append(num)
 
-for i in range(quantidade):
-    lista = choice(escolhas)
-    digito = choice(lista)
-    senha += digito
+if qtt_simb > 0:
+    for i in range(qtt_simb):
+        simb = choice(simbolos)
+        escolhas.append(simb)
+
+while len(escolhas) < total:
+    letras = choice([minusculas,maiusculas])
+    escolhas.append(choice(letras))
+
+shuffle(escolhas)
+senha = "".join(escolhas)
 
 print(f"Sua nova senha é: {senha}")
+
+####################### OLD VERSION #######################
+
+# quantidade = int(input("Quantos digitos deseja em sua senha? "))
+# quer_simbolo = input("Deseja simbolos em sua senha? ")
+
+# if quer_simbolo.lower() == "s":
+#     escolhas = [minusculas,maiusculas,simbolos,numeros]
+# else:
+#     escolhas = [minusculas,maiusculas,numeros]
+
+# for i in range(quantidade):
+#     lista = choice(escolhas)
+#     digito = choice(lista)
+#     senha += digito
