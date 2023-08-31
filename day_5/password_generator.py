@@ -7,9 +7,19 @@ simbolos = ["!", "@", "#", "$", "&", "*"]
 escolhas = []
 senha = ""
 
+print(minusculas)
+print(maiusculas)
+print(numeros)
+
 total = int(input("Quantos digitos deseja em sua senha?\n"))
 qtt_num = int(input("Quantos números deseja?\n"))
 qtt_simb = int(input("Quantos simbolos?\n"))
+
+while qtt_num + qtt_simb > total:
+    print("\nA quantidade de numeros e simbolos passaram o tamanho total da senha, digite novos valores")
+    total = int(input("Quantos digitos deseja em sua senha?\n"))
+    qtt_num = int(input("Quantos números deseja?\n"))
+    qtt_simb = int(input("Quantos simbolos?\n"))
 
 if qtt_num > 0:
     for i in range(qtt_num):
