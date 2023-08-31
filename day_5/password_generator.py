@@ -7,10 +7,6 @@ simbolos = ["!", "@", "#", "$", "&", "*"]
 escolhas = []
 senha = ""
 
-print(minusculas)
-print(maiusculas)
-print(numeros)
-
 total = int(input("Quantos digitos deseja em sua senha?\n"))
 qtt_num = int(input("Quantos números deseja?\n"))
 qtt_simb = int(input("Quantos simbolos?\n"))
