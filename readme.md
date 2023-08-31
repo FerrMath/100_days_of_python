@@ -6,5 +6,12 @@ Repositório com uma sequencia de desafios em python desde os niveis mais basico
 ---
 
 - [Dia 5: Gerador de senhas](https://github.com/FerrMath/100_days_of_python/tree/master/day_5)
+    
+    * Tipo de programa: Terminal;
 
-    O programa de Terminal propoem um gerador de senhas básico, o usuário pode decidir o tamanho da senha e se deseja incluir ou não simbolos especiais.
+    * O programa propoem um gerador de senhas básico. O usuário pode decidir o tamanho da senha e a quantidade de números e simbolos que deseja incluir, porem não ultrapassar, nesse total.
+    * Os caracteres possiveis:
+      * `min = [a-z]`
+      * `mai = [A-Z]`
+      * `nums = [0-9]`
+      * `simbols = ["!", "@", "#", "$", "&", "*"]`
