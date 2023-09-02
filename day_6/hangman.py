@@ -1,32 +1,57 @@
 from random import choice
+from hangman_art import stages, logo
+from palavras import palavras_aleatorias as p
 
-palavras_aleatorias = [
-    "python", "computador", "praia", "montanha",
-    "música", "livro", "esportes", "arte", "ciência",
-    "viagem", "família", "amigos", "comida",
-    "tecnologia", "natureza", "filme",
-    "história", "aventura", "sonho"
-]
 
-# Escolhendo a palavra secreta
-palavra_secreta = choice(palavras_aleatorias)
 
-# Letras escolhidas pelo usuario
-letras: set[str] = set()
+def play():
+    # Gerando área de input do usuario
+    entradas = []
 
-# Gerando área de input do usuario
-entradas = ["_" if letra not in letras else letra for letra in palavra_secreta]
-print(letras, entradas)
+    # Quantidade de vidas restantes
+    vidas = len(stages)
 
-def exibirTentativa(tentativas:set[str]):
-    entradas = ["_" if letra not in tentativas else letra for letra in palavra_secreta]
+    # Escolhendo a palavra secreta
+    palavra_secreta = choice(p)
+
+    # Letras escolhidas pelo usuario
+    letras = set()
+
+    # Loop principal do jogo
+    # TODO criar sistema de vitória caso o jogar acerte a palavra
+    while True:
+        letra = input("Digite uma letra: ").lower()
+        letras.add(letra)
+        if letra not in palavra_secreta:
+            vidas = reduzir_vida(vidas)
+            print(vidas)
+            mostrar_erro(vidas, letra)
+            if vidas == 0:
+                fim_de_jogo()
+                return
+        exibir_tentativa(letras, palavra_secreta)
+
+
+def exibir_tentativa(tentativas:set[str], palavra):
+    entradas = ["_" if letra not in tentativas else letra for letra in palavra]
     print("".join(entradas))
 
-# Loop principal do jogo
-# TODO criar logica para acompanhar quantidade de vidas disponivel para o jogador
-while True:
-    letra = input("Digite uma letra: ")
-    letras.add(letra)
-    exibirTentativa(letras)
+
+def reduzir_vida(vidas):
+    return vidas - 1
 
 
+def mostrar_erro(vidas: int, letra: str):
+    print(vidas)
+    print(stages[vidas])
+    print(f"A letra \"{letra}\" não está na palavra")
+    print()
+
+
+def fim_de_jogo(palavra: str):
+    print("Fim de jogo, você perdeu!")
+    print(f"A palavra era: {palavra.title()}!")
+
+
+if __name__ == "__main__":
+    play()
