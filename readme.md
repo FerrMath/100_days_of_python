@@ -5,13 +5,21 @@ Repositório com uma sequencia de desafios em python desde os niveis mais basico
 
 ---
 
-- [Dia 5: Gerador de senhas](https://github.com/FerrMath/100_days_of_python/tree/master/day_5)
+- ### [Dia 5: Gerador de senhas](https://github.com/FerrMath/100_days_of_python/tree/master/day_5)
     
     * Tipo de programa: Terminal;
 
-    * O programa propoem um gerador de senhas básico. O usuário pode decidir o tamanho da senha e a quantidade de números e simbolos que deseja incluir, porem não ultrapassar, nesse total.
+    * O programa propõem um gerador de senhas básico. O usuário pode decidir o tamanho da senha e a quantidade de números e simbolos que deseja incluir, porem não ultrapassar, nesse total.
     * Os caracteres possiveis:
       * `min = [a-z]`
       * `mai = [A-Z]`
-      * `nums = [0-9]`
+      * `num = [0-9]`
       * `simbols = ["!", "@", "#", "$", "&", "*"]`
+
+---
+
+- ### [Dia 6: Jogo de forca]()
+
+  * Tipo de programa: Terminal;
+
+  - Jogo da forca em potuguês. O usuário pode escolher uma letra até a palavra secreta ser descoberta ou, no caso de muitos erros, completar o desenho do Stickman, levando ao fim do jogo como derrota para o jogador.
