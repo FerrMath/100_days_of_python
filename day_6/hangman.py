@@ -1,25 +1,32 @@
 from random import choice
 from hangman_art import stages, logo
 from palavras import palavras_aleatorias as p
+import string as s
 
 
 def play():
-    # Quantidade de vidas restantes
     vidas = len(stages)
-
-    # Escolhendo a palavra secreta
     palavra_secreta = choice(p)
-
-    # Letras escolhidas pelo usuario
     letras = set()
 
+    # Exibindo a logo do jogo
     print(logo,"\n")
 
     # Loop principal do jogo
     while True:
         letra = input("Digite uma letra: ").lower()
+
+        # Verifica se letra digitada é valida e não é repetida
+        while len(letra) > 1 or letra not in s.ascii_lowercase or letra == "" or letra in letras:
+            if letra in letras:
+                print(f"Você já digitou a letra \"{letra}\", tente outra vez com uma letra diferente!\n")
+            else:
+                print("Tentativa invalida, tente outra vez!\n")
+            letra = input("Digite uma letra: ").lower()
+
         letras.add(letra)
-        
+
+        # Verifica se letra está na palavra digitada
         if letra not in palavra_secreta:
             vidas = reduzir_vida(vidas)
             mostrar_erro(vidas, letra)
