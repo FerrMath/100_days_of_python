@@ -18,7 +18,7 @@ Repositório com uma sequencia de desafios em python desde os niveis mais basico
 
 ---
 
-- ### [Dia 6: Jogo de forca]()
+- ### [Dia 6: Jogo de forca](https://github.com/FerrMath/100_days_of_python/tree/master/day_6)
 
   * Tipo de programa: Terminal;
 
