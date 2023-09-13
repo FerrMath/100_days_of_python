@@ -34,3 +34,15 @@ Repositório com uma sequencia de desafios em python desde os niveis mais basico
 
         * Input: (msg = "abc de", key = 5);
         * Output: "fgh ij"
+
+---
+
+### [Dia 8: Leilão secreto](https://github.com/FerrMath/100_days_of_python/tree/master/day_8)
+
+  * Tipo de programa: Terminal;
+
+  - Programa de leilão. O usuario consegue fazer novos lances até que o mesmo solicite o fim do leilão. Após isso o lance mais alto será apresentado com o nome do vencedor do leilão.
+        
+        # Lance unico será considerado o mais alto. 
+        * Input: (nome = "abcde", lance = 123.45)
+        * Output: "The winner is Abcde, with the bid of $123.45"
