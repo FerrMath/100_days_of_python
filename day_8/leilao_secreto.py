@@ -1,6 +1,7 @@
 import os
+from art import logo
 
-def leilao():
+def auction():
     lances = dict()
 
     print("Welcome to the secret auction program!")
@@ -9,33 +10,39 @@ def leilao():
         apostador = input("What is your name?: ")
         lance = float(input("What's your bid?: $"))
         lances[apostador] = lance
-        continuar = input("Are there any other bidders? Type 'yes' or 'no'.\n").lower()
-        while continuar != "yes" and continuar != "no":
+        continue_str = input("Are there any other bidders? Type 'yes' or 'no'.\n").lower()
+        
+        while continue_str != "yes" and continue_str != "no":
             print("Invalid value!")
-            continuar = input("Are there any other bidders? Type 'yes' or 'no'.\n").lower()
-        if continuar == 'yes':
-            limpar_tela()
+            continue_str = input("Are there any other bidders? Type 'yes' or 'no'.\n").lower()
+        
+        if continue_str == 'yes':
+            clear_screen()
             continue
-        elif continuar == 'no':
+        elif continue_str == 'no':
             break
+    
     check_winner(lances)
 
 
 def check_winner(lances):
-    maior_valor = 0
-    apostador = ""
+    highest_bid = 0
+    bidder = ""
 
     for key, valor in lances.items():
-        if valor > maior_valor:
-            maior_valor = valor
-            apostador = key
-    limpar_tela()
-    print(f"The winner is {apostador}, with the bid of ${maior_valor:.2f}")
+        if valor > highest_bid:
+            highest_bid = valor
+            bidder = key
+    
+    clear_screen()
+    print(f"The winner is {bidder}, with the bid of ${highest_bid:.2f}")
     return
 
 
-def limpar_tela():
+def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+
 if __name__ == "__main__":
-    leilao()
+    print(logo + "\n")
+    auction()
