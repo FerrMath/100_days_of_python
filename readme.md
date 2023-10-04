@@ -105,10 +105,10 @@ Repositório com uma sequencia de desafios em python desde os niveis mais basico
 
       - O jogador pode pedir um `HIT` desde que o valor total de sua mão seja inferior a `21`. Isso irá adicionar uma carta à sua mão.
 
-      -As cartas possiveis são:
+      - As cartas possiveis são:
 
-        # 'a' ou 'Ás' == (11 || 1), dependendo do valor atual da mão
-        baralho = ['a', '2', '3', '4', '5', '6','7', '8', '9', '10', 'j', 'q', 'k'] * 4
+            # 'a' ou 'Ás' == (11 || 1), dependendo do valor atual da mão
+            baralho = ['a', '2', '3', '4', '5', '6','7', '8', '9', '10', 'j', 'q', 'k'] * 4
       
           
           
