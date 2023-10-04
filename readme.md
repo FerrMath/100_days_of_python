@@ -92,3 +92,23 @@ Repositório com uma sequencia de desafios em python desde os niveis mais basico
       Se o usuario responder `"y"` seguido do input `3` e da operação escolhida `"*"` o output será:
       
         Result -- > 3.0 * 3.0 = 9.00
+
+---
+
+### [Dia 10: BlackJack](https://github.com/FerrMath/100_days_of_python/tree/master/day_10)
+
+  * Tipo de programa: Terminal;
+
+  - Round de blackjack.
+      - O jogador e a mesa comçam com duas cartas. 
+      A mesa terá a segunda carta oculta até o jogador sofrer um `BUST` ou optar por fazer um `STAND`.
+
+      - O jogador pode pedir um `HIT` desde que o valor total de sua mão seja inferior a `21`. Isso irá adicionar uma carta à sua mão.
+
+      -As cartas possiveis são:
+
+        # 'a' ou 'Ás' == (11 || 1), dependendo do valor atual da mão
+        baralho = ['a', '2', '3', '4', '5', '6','7', '8', '9', '10', 'j', 'q', 'k'] * 4
+      
+          
+          
